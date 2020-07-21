@@ -13,5 +13,5 @@ find_package(Boost 1.72.0 REQUIRED)
 
 add_subdirectory(src)
 
-configure_file(ModernVRML.pc.in ModernVRML.pc @ONLY)
+configure_file(ModernVRML.pc.in ${CMAKE_BINARY_DIR}/ModernVRML.pc)
 install(FILES ${CMAKE_BINARY_DIR}/ModernVRML.pc DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig)
