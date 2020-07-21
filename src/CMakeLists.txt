@@ -8,7 +8,6 @@ add_library(VRMLParser
         Parser/x3d_vrml_grammar.h
         Parser/x3d_vrml_grammar.cpp)
 
-
 if(WIN32)
     target_compile_features(VRMLParser PUBLIC cxx_std_17)
     set_property(TARGET VRMLParser PROPERTY CXX_STANDARD 17)
@@ -24,15 +23,15 @@ target_compile_options(VRMLParser PRIVATE
 include_directories(${PROJECT_BINARY_DIR})
 
 target_link_libraries(VRMLParser
-        Threads::Threads
-        Camera
-        Network
-        Base
-        CameraConnection)
+        Threads::Threads)
 
-install(DIRECTORY Parser/ DESTINATION include/VRMLParser
-        FILES_MATCHING PATTERN "*.h")
+set_target_properties(VRMLParser PROPERTIES VERSION ${PROJECT_VERSION})
+
+set_target_properties(VRMLParser PROPERTIES SOVERSION 0)
+
+target_include_directories(VRMLParser PRIVATE Parser/)
+
+
 install(TARGETS VRMLParser
-        RUNTIME DESTINATION bin
-        LIBRARY DESTINATION lib
-        ARCHIVE DESTINATION lib/static)
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
