@@ -22,7 +22,7 @@
 # ifndef OPENVRML_BASETYPES_H
 #   define OPENVRML_BASETYPES_H
 
-#   include <openvrml-common.h>
+#   include "openvrml-common.h"
 #   include <cassert>
 #   include <cstddef>
 #   include <algorithm>
