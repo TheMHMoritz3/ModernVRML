@@ -29,3 +29,10 @@ target_link_libraries(VRMLParser
         Network
         Base
         CameraConnection)
+
+install(DIRECTORY Parser/ DESTINATION include/VRMLParser
+        FILES_MATCHING PATTERN "*.h")
+install(TARGETS VRMLParser
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib/static)
