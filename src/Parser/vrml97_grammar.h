@@ -21,12 +21,12 @@
 #ifndef OPENVRML_VRML97_GRAMMAR_H
 #define OPENVRML_VRML97_GRAMMAR_H
 
-#include <openvrml/browser.h>
+#include "browser.h"
 #include <boost/spirit/include/classic.hpp>
 #include <boost/spirit/include/classic_actor.hpp>
 #include <boost/spirit/include/classic_dynamic.hpp>
 #include <boost/spirit/include/phoenix1.hpp>
-#include <boost/test/floating_point_comparison.hpp>
+#include <boost/test/tools/floating_point_comparison.hpp>
 #include <stack>
 
 namespace openvrml {
@@ -422,13 +422,10 @@ namespace openvrml {
 
             bool operator()() const
             {
-                using boost::test_tools::check_is_close;
-                using boost::test_tools::percent_tolerance;
                 const float length = sqrt(this->x_ * this->x_
                                           + this->y_ * this->y_
                                           + this->z_ * this->z_);
-                return check_is_close(length, 1.0f,
-                                      percent_tolerance(1.0e-6f));
+                return std::fabs(length - 1.0f)<1.0e-6f;
             }
 
         private:
@@ -1944,7 +1941,7 @@ namespace openvrml {
                 template <typename IteratorT>
                 void operator()(IteratorT, IteratorT) const
                 {
-                    std::auto_ptr<node_type_decls> node_types =
+                    std::shared_ptr<node_type_decls> node_types =
                         profile("VRML97");
                     this->scope_stack.top().node_body_repo = *node_types;
                     this->actions.on_scene_start();

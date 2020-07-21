@@ -18,10 +18,10 @@
 // along with this library; if not, see <http://www.gnu.org/licenses/>.
 //
 
-# ifndef OPENVRML_X3D_VRML_GRAMMAR_H
-#   define OPENVRML_X3D_VRML_GRAMMAR_H
+#ifndef OPENVRML_X3D_VRML_GRAMMAR_H
+#define OPENVRML_X3D_VRML_GRAMMAR_H
 
-#   include <openvrml/vrml97_grammar.h>
+#include "vrml97_grammar.h"
 
 namespace openvrml {
 
@@ -471,7 +471,7 @@ namespace openvrml {
                 template <typename IteratorT>
                 void operator()(IteratorT first, IteratorT last) const
                 {
-                    std::auto_ptr<node_type_decls> node_types;
+                    std::shared_ptr<node_type_decls> node_types;
                     try {
                         node_types = profile(std::string(first, last));
                     } catch (std::invalid_argument &) {
