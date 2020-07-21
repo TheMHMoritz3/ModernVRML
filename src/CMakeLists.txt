@@ -31,6 +31,9 @@ set_target_properties(VRMLParser PROPERTIES SOVERSION 0)
 
 target_include_directories(VRMLParser PRIVATE Parser/)
 
+set_target_properties(VRMLParser PROPERTIES PUBLIC_HEADER "Parser/vrml97_grammar.h;Parser/x3d_vrml_grammar.h")
+
+
 
 install(TARGETS VRMLParser
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
