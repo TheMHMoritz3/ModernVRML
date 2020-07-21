@@ -76,13 +76,13 @@ include_directories(${PROJECT_BINARY_DIR})
 target_link_libraries(VRMLParser
         Threads::Threads)
 
-set_target_properties(VRMLParser PROPERTIES VERSION ${PROJECT_VERSION})
+#set_target_properties(VRMLParser PROPERTIES VERSION ${PROJECT_VERSION})
 
-set_target_properties(VRMLParser PROPERTIES SOVERSION 0)
+#set_target_properties(VRMLParser PROPERTIES SOVERSION 0)
 
 target_include_directories(VRMLParser PRIVATE Parser/)
 
-install(DIRECTORY ${CMAKE_SOURCE_DIR}/Parser/
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/Parser/
         DESTINATION include/VRMLParser
         FILES_MATCHING PATTERN "*.h*")
 
