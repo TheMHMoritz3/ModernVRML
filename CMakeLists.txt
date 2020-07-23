@@ -9,7 +9,7 @@ enable_testing()
 
 find_package( Threads )
 
-find_package(Boost 1.72.0 REQUIRED)
+find_package(Boost 1.65.0 REQUIRED)
 
 add_subdirectory(src)
 
