@@ -57,7 +57,7 @@ add_library(VRMLParser
         Parser/viewer.cpp
         Parser/local/dl.h
         Parser/local/dl.cpp
-        )
+        Parser/Shape.cpp Parser/Shape.h Parser/IComponent.h Parser/WorldInfo.cpp Parser/WorldInfo.h Parser/Document.cpp Parser/Document.h Parser/Appearance.cpp Parser/Appearance.h Parser/Material.cpp Parser/Material.h Parser/Geometry.cpp Parser/Geometry.h Parser/Vector.h Parser/Variable.h Parser/Coordinate.cpp Parser/Coordinate.h)
 
 if(WIN32)
     target_compile_features(VRMLParser PUBLIC cxx_std_17)
