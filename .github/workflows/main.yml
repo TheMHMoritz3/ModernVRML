@@ -26,7 +26,7 @@ jobs:
     - name: Install Dependencies
       run: |
         sudo apt update
-        sudo apt install libboost-dev-all
+        sudo apt install libboost-dev
     # Runs a single command using the runners shell
     - name: run-cmake
       uses: lukka/run-cmake@v2.5
