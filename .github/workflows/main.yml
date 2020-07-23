@@ -24,7 +24,7 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: Install Dependencies
-      run: apt install libboost-dev-all
+      run: sudo apt install libboost-dev-all
     # Runs a single command using the runners shell
     - name: run-cmake
       uses: lukka/run-cmake@v2.5
