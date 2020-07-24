@@ -12,6 +12,8 @@ class LibnameConan(ConanFile):
     exports_sources = ["*"]
     generators = "cmake"
 
+    version = None
+
     settings = "os", "arch", "compiler", "build_type"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
