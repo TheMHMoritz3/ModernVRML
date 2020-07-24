@@ -24,7 +24,7 @@ void ModernVRML::Parser::Document::writeFile() {
         writtenValue+=component->toVRML()+"\n";
     }
 
-    std::ofstream ofs(path);
+    std::ofstream ofs(path.c_str());
     ofs<<writtenValue;
     ofs.flush();
     ofs.close();
