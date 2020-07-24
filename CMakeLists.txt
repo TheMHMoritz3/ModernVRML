@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.15)
 
 project(ModernVRML VERSION 0.0.1 DESCRIPTION "mylib description")
 
@@ -9,7 +9,7 @@ enable_testing()
 
 find_package( Threads )
 
-find_package(Boost 1.72.0 REQUIRED)
+find_package(Boost 1.65.0 REQUIRED)
 
 add_subdirectory(src)
 
