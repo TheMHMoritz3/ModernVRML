@@ -23,7 +23,6 @@ class LibnameConan(ConanFile):
     _cmake = None
 
     requires = (
-        "zlib/1.2.11",
         "boost/1.72.0"
     )
 
