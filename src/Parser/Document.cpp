@@ -1,6 +1,11 @@
 #include "Document.h"
-#include <filesystem>
 #include <fstream>
+
+#ifdef _WIN32
+#include <filesystem>
+#else
+#include <boost/filesystem.hpp>
+#endif
 
 ModernVRML::Parser::Document::Document(std::string file) {
     FilePath = file;
@@ -11,17 +16,12 @@ void ModernVRML::Parser::Document::addComponent(std::shared_ptr<IComponent> comp
 }
 
 void ModernVRML::Parser::Document::writeFile() {
-#ifdef _MSC_VER
+#ifdef _WIN32
     std::filesystem::path path{ FilePath };
     std::filesystem::create_directories(path.parent_path());
 #else
-#if(defined(__GNUC__) and (7 > __GNUC_MAJOR__))
-    std::filesystem::path path{ FilePath };
-    std::filesystem::create_directories(path.parent_path());
-#else
-    std::experimental::filesystem::path path{ FilePath };
-    std::experimental::filesystem::create_directories(path.parent_path());
-#endif
+    boost::filesystem::path path{ FilePath };
+    boost::filesystem::create_directories(path.parent_path());
 #endif
 
 

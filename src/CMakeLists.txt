@@ -26,8 +26,8 @@ if(WIN32)
     target_compile_features(VRMLParser PUBLIC cxx_std_17)
     set_property(TARGET VRMLParser PROPERTY CXX_STANDARD 17)
 else()
-    target_compile_features(VRMLParser PUBLIC cxx_std_17)
-    set_property(TARGET VRMLParser PROPERTY CXX_STANDARD 17)
+    target_compile_features(VRMLParser PUBLIC cxx_std_11)
+    set_property(TARGET VRMLParser PROPERTY CXX_STANDARD 11)
 endif()
 
 target_compile_options(VRMLParser PRIVATE

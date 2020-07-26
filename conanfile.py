@@ -22,11 +22,15 @@ class LibnameConan(ConanFile):
     _build_subfolder = "build_subfolder"
     _cmake = None
 
-    requires = ( )
+    requires = ()
 
     def config_options(self):
         if self.settings.os == 'Windows':
             del self.options.fPIC
+
+    def requirements(self):
+        if self.settings.os == 'Linux':
+            self.requires("boost/1.72.0")
 
     def source(self):
         tools.replace_in_file(self._source_subfolder+"/CMakeLists.txt", "project(ModernVRML VERSION 0.0.1 DESCRIPTION \"mylib description\")",
