@@ -9,7 +9,7 @@
 namespace ModernVRML {
     namespace Parser {
         template<typename Type>
-        class PARSER_EXPORT MatVector : public IComponent {
+        class __declspec(dllexport) MatVector : public IComponent {
         public:
             MatVector() = delete;
             MatVector(std::string name, std::function<std::string(Type)> toString, size_t numberOfComponents, bool withComma);
