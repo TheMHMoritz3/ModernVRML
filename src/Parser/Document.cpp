@@ -1,9 +1,5 @@
-//
-// Created by moritzh on 21.07.20.
-//
-
 #include "Document.h"
-#include <boost/filesystem.hpp>
+#include <filesystem>
 #include <fstream>
 
 ModernVRML::Parser::Document::Document(std::string file) {
@@ -15,8 +11,19 @@ void ModernVRML::Parser::Document::addComponent(std::shared_ptr<IComponent> comp
 }
 
 void ModernVRML::Parser::Document::writeFile() {
-    boost::filesystem::path path{FilePath};
-    boost::filesystem::create_directories(path.parent_path());
+#ifdef _MSC_VER
+    std::filesystem::path path{ FilePath };
+    std::filesystem::create_directories(path.parent_path());
+#else
+#if(defined(__GNUC__) and (7 > __GNUC_MAJOR__))
+    std::filesystem::path path{ FilePath };
+    std::filesystem::create_directories(path.parent_path());
+#else
+    std::experimental::filesystem::path path{ FilePath };
+    std::experimental::filesystem::create_directories(path.parent_path());
+#endif
+#endif
+
 
     std::string writtenValue = VersionComment+"\n";
     for(const auto& component : Components)

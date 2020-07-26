@@ -19,7 +19,8 @@ add_library(VRMLParser
         Parser/Vector.h
         Parser/Variable.h
         Parser/Coordinate.cpp
-        Parser/Coordinate.h)
+        Parser/Coordinate.h
+        Parser/parser_global.h)
 
 if(WIN32)
     target_compile_features(VRMLParser PUBLIC cxx_std_17)
@@ -36,13 +37,11 @@ target_compile_options(VRMLParser PRIVATE
 include_directories(${PROJECT_BINARY_DIR})
 
 target_link_libraries(VRMLParser
-        Threads::Threads)
+        Threads::Threads
+        ${CONAN_LIBS})
 
-#set_target_properties(VRMLParser PROPERTIES VERSION ${PROJECT_VERSION})
+target_include_directories(VRMLParser PRIVATE Parser/ ${PROJECT_SOURCE_DIR}/src ${PROJECT_BINARY_DIR}/src)
 
-#set_target_properties(VRMLParser PROPERTIES SOVERSION 0)
-
-target_include_directories(VRMLParser PRIVATE Parser/)
 
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/Parser/
         DESTINATION include/VRMLParser

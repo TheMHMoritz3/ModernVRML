@@ -1,17 +1,14 @@
-//
-// Created by moritzh on 21.07.20.
-//
-
 #ifndef MODERNVRML_MATERIAL_H
 #define MODERNVRML_MATERIAL_H
 
 #include "IComponent.h"
-#include <memory>
 #include "Variable.h"
+#include "parser_global.h"
+#include <memory>
 
 namespace ModernVRML {
     namespace Parser {
-        class Material : public IComponent{
+        class PARSER_EXPORT Material : public IComponent{
         public:
             Material()=delete;
             Material(std::string name);

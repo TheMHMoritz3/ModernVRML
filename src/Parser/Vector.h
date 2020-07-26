@@ -1,17 +1,15 @@
-//
-// Created by moritzh on 21.07.20.
-//
-
 #ifndef MODERNVRML_VECTOR_H
 #define MODERNVRML_VECTOR_H
 
 #include "IComponent.h"
+#include "parser_global.h"
 #include <functional>
 #include <vector>
+
 namespace ModernVRML {
     namespace Parser {
         template<typename Type>
-        class MatVector : public IComponent {
+        class PARSER_EXPORT MatVector : public IComponent {
         public:
             MatVector() = delete;
             MatVector(std::string name, std::function<std::string(Type)> toString, size_t numberOfComponents, bool withComma);

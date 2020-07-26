@@ -1,18 +1,15 @@
-//
-// Created by moritzh on 22.07.20.
-//
-
 #ifndef MODERNVRML_COORDINATE_H
 #define MODERNVRML_COORDINATE_H
 
 #include "IComponent.h"
+#include "parser_global.h"
 #include <memory>
 #include <string>
 #include <vector>
 
 namespace ModernVRML {
     namespace Parser {
-        class Coordinate : public IComponent {
+        class PARSER_EXPORT Coordinate : public IComponent {
         public:
             Coordinate() = default;
             Coordinate(std::string name);

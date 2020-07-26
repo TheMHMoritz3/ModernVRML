@@ -1,6 +1,3 @@
-//
-// Created by moritzh on 21.07.20.
-//
 
 #include "WorldInfo.h"
 

@@ -1,15 +1,12 @@
-//
-// Created by moritzh on 21.07.20.
-//
-
 #ifndef MODERNVRML_WORLDINFO_H
 #define MODERNVRML_WORLDINFO_H
 
 #include "IComponent.h"
+#include "parser_global.h"
 
 namespace ModernVRML {
     namespace Parser {
-        class WorldInfo : public IComponent{
+        class PARSER_EXPORT WorldInfo : public IComponent{
         public:
             WorldInfo() = default;
             WorldInfo(std::string info, std::string title);

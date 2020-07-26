@@ -1,17 +1,15 @@
-//
-// Created by moritzh on 21.07.20.
-//
-
 #ifndef MODERNVRML_VARIABLE_H
 #define MODERNVRML_VARIABLE_H
 
 #include "IComponent.h"
+#include "parser_global.h"
 #include <functional>
 #include <vector>
+
 namespace ModernVRML {
     namespace Parser {
         template<typename Type>
-        class MatVariable : public IComponent {
+        class PARSER_EXPORT MatVariable : public IComponent {
         public:
             MatVariable() = default;
             MatVariable(std::string name, std::function<std::string(Type)> toString, size_t numberOfComponents);

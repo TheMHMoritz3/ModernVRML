@@ -16,15 +16,13 @@ class LibnameConan(ConanFile):
 
     settings = "os", "arch", "compiler", "build_type"
     options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
+    default_options = {"shared": True, "fPIC": True}
 
     _source_subfolder = "."
     _build_subfolder = "build_subfolder"
     _cmake = None
 
-    requires = (
-        "boost/1.72.0"
-    )
+    requires = ( )
 
     def config_options(self):
         if self.settings.os == 'Windows':

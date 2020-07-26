@@ -1,18 +1,15 @@
-//
-// Created by moritzh on 21.07.20.
-//
-
 #ifndef MODERNVRML_DOCUMENT_H
 #define MODERNVRML_DOCUMENT_H
 
 #include <string>
 #include <memory>
 #include <vector>
+#include "parser_global.h"
 #include "IComponent.h"
 
 namespace ModernVRML {
     namespace Parser {
-        class Document {
+        class PARSER_EXPORT Document {
         public:
             Document() = delete;
             Document(std::string file);

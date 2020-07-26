@@ -1,10 +1,7 @@
-//
-// Created by moritzh on 21.07.20.
-//
-
 #ifndef MODERNVRML_ICOMPONENT_H
 #define MODERNVRML_ICOMPONENT_H
 
+#include "parser_global.h"
 #include <string>
 
 namespace ModernVRML {
@@ -20,7 +17,7 @@ namespace ModernVRML {
             VARIABLE
         };
 
-        class IComponent {
+        class PARSER_EXPORT IComponent {
         public:
             virtual ~IComponent() = default;
 

@@ -1,6 +1,3 @@
-//
-// Created by moritzh on 22.07.20.
-//
 
 #include "Coordinate.h"
 

@@ -1,17 +1,14 @@
-//
-// Created by moritzh on 21.07.20.
-//
-
 #ifndef MODERNVRML_GEOMETRY_H
 #define MODERNVRML_GEOMETRY_H
 
 #include "IComponent.h"
+#include "parser_global.h"
 #include <memory>
 #include <vector>
 
 namespace ModernVRML {
     namespace Parser {
-        class Geometry : public IComponent {
+        class PARSER_EXPORT Geometry : public IComponent {
         public:
             Geometry()=default;
             Geometry(std::string name);

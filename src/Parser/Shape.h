@@ -1,18 +1,15 @@
-//
-// Created by moritzh on 21.07.20.
-//
-
 #ifndef MODERNVRML_SHAPE_H
 #define MODERNVRML_SHAPE_H
 
 #include "IComponent.h"
 #include "Geometry.h"
 #include "Appearance.h"
-
+#include "parser_global.h"
 #include <memory>
+
 namespace ModernVRML {
     namespace Parser {
-        class Shape : public IComponent {
+        class PARSER_EXPORT Shape : public IComponent {
         public:
             Shape() = default;
             Shape(std::string name);

@@ -1,17 +1,14 @@
-//
-// Created by moritzh on 21.07.20.
-//
-
 #ifndef MODERNVRML_APPEARANCE_H
 #define MODERNVRML_APPEARANCE_H
 
 #include <memory>
 #include "IComponent.h"
 #include "Material.h"
+#include "parser_global.h"
 
 namespace ModernVRML {
     namespace Parser {
-        class Appearance : public IComponent {
+        class PARSER_EXPORT Appearance : public IComponent {
         public:
             Appearance()=delete;
             Appearance(std::string name);
