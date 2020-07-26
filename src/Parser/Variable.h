@@ -9,7 +9,11 @@
 namespace ModernVRML {
     namespace Parser {
         template<typename Type>
+#ifdef _WIN32
         class __declspec(dllexport) MatVariable : public IComponent {
+#else
+        class MatVariable : public IComponent {
+#endif
         public:
             MatVariable() = default;
             MatVariable(std::string name, std::function<std::string(Type)> toString, size_t numberOfComponents);
