@@ -20,8 +20,9 @@ void ModernVRML::Parser::Document::writeFile() {
     std::filesystem::path path{ FilePath };
     std::filesystem::create_directories(path.parent_path());
 #else
-    boost::filesystem::path path{ FilePath };
-    boost::filesystem::create_directories(path.parent_path());
+    boost::filesystem::path filePath{ FilePath };
+    boost::filesystem::path path{filePath.generic_path()};
+    boost::filesystem::create_directories(path.remove_filename());
 #endif
 
 

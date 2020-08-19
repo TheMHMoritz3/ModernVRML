@@ -9,7 +9,7 @@ enable_testing()
 find_package( Threads )
 
 if(!WIN32)
-    find_package(Boost 1.72.0 REQUIRED)
+    find_package(Boost 1.69.0 filesystem REQUIRED)
 endif()
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}" ${CMAKE_MODULE_PATH})
