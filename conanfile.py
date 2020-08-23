@@ -12,7 +12,7 @@ class LibnameConan(ConanFile):
     exports_sources = ["*"]
     generators = "cmake"
 
-    version = "NVP"
+    version = "alpha-2"
 
     settings = "os", "arch", "compiler", "build_type"
     options = {"shared": [True, False], "fPIC": [True, False]}
